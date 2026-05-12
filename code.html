@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>MediCare Premium | Your Health, Our Priority</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-primary": "#a8c8ff",
+                        "surface-tint": "#005eb5",
+                        "primary": "#004e99",
+                        "outline": "#727783",
+                        "on-primary-container": "#dbe6ff",
+                        "surface-variant": "#d8e3fb",
+                        "primary-fixed-dim": "#a8c8ff",
+                        "on-secondary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "surface-container": "#e7eeff",
+                        "secondary": "#006b5f",
+                        "outline-variant": "#c1c6d4",
+                        "on-tertiary-fixed-variant": "#444749",
+                        "tertiary-fixed": "#e0e3e5",
+                        "on-error": "#ffffff",
+                        "on-background": "#111c2d",
+                        "surface-container-low": "#f0f3ff",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-fixed": "#00201c",
+                        "tertiary": "#4c4f51",
+                        "on-tertiary-container": "#e4e6e8",
+                        "surface-dim": "#cfdaf2",
+                        "surface-container-highest": "#d8e3fb",
+                        "secondary-fixed-dim": "#4fdbc8",
+                        "background": "#f9f9ff",
+                        "tertiary-fixed-dim": "#c4c7c9",
+                        "inverse-surface": "#263143",
+                        "on-primary": "#ffffff",
+                        "secondary-fixed": "#71f8e4",
+                        "on-secondary-container": "#006f64",
+                        "error": "#ba1a1a",
+                        "primary-container": "#0a66c2",
+                        "on-primary-fixed": "#001b3d",
+                        "on-secondary-fixed-variant": "#005048",
+                        "surface": "#f9f9ff",
+                        "primary-fixed": "#d6e3ff",
+                        "on-surface-variant": "#414752",
+                        "secondary-container": "#6df5e1",
+                        "on-primary-fixed-variant": "#00468a",
+                        "surface-bright": "#f9f9ff",
+                        "error-container": "#ffdad6",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-high": "#dee8ff",
+                        "on-tertiary-fixed": "#191c1e",
+                        "inverse-on-surface": "#ecf1ff",
+                        "tertiary-container": "#646769",
+                        "on-surface": "#111c2d"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "container-max": "1280px",
+                        "xl": "80px",
+                        "md": "24px",
+                        "base": "8px",
+                        "xs": "4px",
+                        "sm": "12px",
+                        "lg": "48px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "display-lg": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "body-md": ["Inter"],
+                        "display-lg-mobile": ["Inter"],
+                        "caption": ["Inter"],
+                        "label-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "display-lg-mobile": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "caption": ["12px", { "lineHeight": "16px", "fontWeight": "400" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "500" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .ambient-shadow { box-shadow: 0 4px 20px rgba(10, 102, 194, 0.05); }
+        .hover-lift { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .hover-lift:hover { transform: translateY(-4px); box-shadow: 0 8px 30px rgba(10, 102, 194, 0.08); }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md antialiased selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopAppBar -->
+<header class="bg-surface/90 backdrop-blur-md dark:bg-surface-container-lowest/90 sticky top-0 w-full z-50 border-b border-outline-variant/30 dark:border-outline-variant/10 shadow-sm dark:shadow-none">
+<div class="flex justify-between items-center max-w-container-max mx-auto px-gutter h-20">
+<div class="flex items-center gap-sm cursor-pointer hover:scale-95 opacity-80 transition-transform">
+<span class="material-symbols-outlined text-primary font-bold text-headline-md" style="font-variation-settings: 'FILL' 1;">medical_services</span>
+<span class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed-dim">MediCare Premium</span>
+</div>
+<nav class="hidden md:flex gap-md items-center">
+<a class="font-label-md text-label-md text-primary dark:text-primary-fixed-dim font-bold border-b-2 border-primary pb-1" href="#">Home</a>
+<a class="font-label-md text-label-md text-on-surface-variant dark:text-on-surface-variant font-medium hover:text-primary dark:hover:text-primary-fixed transition-colors duration-300" href="#">Services</a>
+<a class="font-label-md text-label-md text-on-surface-variant dark:text-on-surface-variant font-medium hover:text-primary dark:hover:text-primary-fixed transition-colors duration-300" href="#">Doctors</a>
+<a class="font-label-md text-label-md text-on-surface-variant dark:text-on-surface-variant font-medium hover:text-primary dark:hover:text-primary-fixed transition-colors duration-300" href="#">Appointments</a>
+</nav>
+<button class="bg-primary text-on-primary font-label-md text-label-md px-md py-sm rounded-lg hover:bg-primary/90 transition-colors shadow-sm hidden md:block">
+                Book Appointment
+            </button>
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined text-headline-md">menu</span>
+</button>
+</div>
+</header>
+<!-- Hero Section -->
+<section class="relative bg-surface-container-low overflow-hidden pt-xl pb-xl md:pt-[120px] md:pb-[120px]">
+<div class="absolute inset-0 bg-gradient-to-r from-surface-container-low via-surface-container-low/90 to-transparent z-10 w-full md:w-1/2"></div>
+<img alt="Hero Image" class="absolute inset-0 w-full h-full object-cover object-center z-0 opacity-40 md:opacity-100" data-alt="A bright, modern hospital corridor bathed in soft, natural daylight. In the foreground, a diverse team of professional doctors and nurses wearing pristine white coats and teal scrubs are confidently walking towards the camera. The setting features clean white walls, subtle blue accents, and high-end medical equipment, perfectly embodying a corporate modern clinical aesthetic that exudes trust, expertise, and institutional prestige." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDxxyh8MHCj6D8Zgs9il1Uv_xaQF9wTAsJQgLkkpM8HgFAMfuCV58FbDm4xNU-dj9IisM6qBdrjU1o0DNiVzb1ONB2V6aYS890szNx-ggE1ZR5XyD4e-R5z8GjKb3lPRAl_CBQvBasLtX_oOvXFJvifSLEkqlMqLmKleuVzNMuqoE-JhgUt4WfvByiC5pa5uk2ja-2hN3OSO8zuFGXBTwi2A7UdfgNwoDU-DWXjRZRxRaUZEN_pxgTOe8BYPEqIAbZHwY_lrwq3MqI"/>
+<div class="max-w-container-max mx-auto px-gutter relative z-20 h-full flex items-center">
+<div class="max-w-2xl">
+<div class="inline-flex items-center gap-xs bg-surface-variant text-primary font-label-md text-label-md px-sm py-xs rounded-full mb-md">
+<span class="material-symbols-outlined text-sm">verified</span>
+                    Top-Tier Medical Expertise
+                </div>
+<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg text-on-background mb-md">
+                    Your Health,<br/><span class="text-primary">Our Priority</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-lg max-w-xl">
+                    Experience world-class clinical care with our team of renowned specialists. We combine advanced technology with a compassionate approach to deliver unparalleled medical outcomes.
+                </p>
+<div class="flex flex-col sm:flex-row gap-sm">
+<button class="bg-primary text-on-primary font-label-md text-label-md px-[32px] py-sm rounded-lg hover:bg-primary/90 transition-colors shadow-sm ambient-shadow flex items-center justify-center gap-xs">
+                        Book Consultation
+                        <span class="material-symbols-outlined text-body-md">arrow_forward</span>
+</button>
+<button class="bg-transparent text-primary border border-primary font-label-md text-label-md px-[32px] py-sm rounded-lg hover:bg-surface-container transition-colors flex items-center justify-center gap-xs">
+                        Our Services
+                    </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Statistics Section -->
+<section class="bg-primary text-on-primary py-lg relative z-30 -mt-md md:-mt-xl mx-gutter md:mx-auto max-w-container-max rounded-xl ambient-shadow">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-md text-center divide-y md:divide-y-0 md:divide-x divide-on-primary/20">
+<div class="p-sm">
+<h3 class="font-display-lg text-headline-lg md:text-display-lg mb-xs">25+</h3>
+<p class="font-label-md text-label-md text-on-primary/80">Years Experience</p>
+</div>
+<div class="p-sm">
+<h3 class="font-display-lg text-headline-lg md:text-display-lg mb-xs">100+</h3>
+<p class="font-label-md text-label-md text-on-primary/80">Expert Specialists</p>
+</div>
+<div class="p-sm">
+<h3 class="font-display-lg text-headline-lg md:text-display-lg mb-xs">50k+</h3>
+<p class="font-label-md text-label-md text-on-primary/80">Patients Treated</p>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-surface-container-low dark:bg-surface-container-lowest w-full py-xl border-t border-outline-variant/20 dark:border-outline-variant/10 flat no shadows mt-xl">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter max-w-container-max mx-auto px-gutter">
+<div class="col-span-1 md:col-span-1">
+<div class="flex items-center gap-sm mb-md">
+<span class="material-symbols-outlined text-primary font-bold text-headline-md" style="font-variation-settings: 'FILL' 1;">medical_services</span>
+<span class="font-headline-sm text-headline-sm font-bold text-primary dark:text-primary-fixed-dim">MediCare</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-md max-w-xs">
+                    Leading the way in clinical excellence and patient-centered care.
+                </p>
+<div class="flex gap-sm">
+<!-- Social icons placeholders -->
+</div>
+</div>
+<div class="col-span-1">
+<h4 class="font-headline-md text-body-lg font-bold text-on-background mb-md">Departments</h4>
+<ul class="space-y-sm">
+<li><a class="font-label-md text-label-md text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-all duration-200 Hover: translate-x-1 transition-transform block" href="#">Cardiology</a></li>
+<li><a class="font-label-md text-label-md text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-all duration-200 Hover: translate-x-1 transition-transform block" href="#">Neurology</a></li>
+<li><a class="font-label-md text-label-md text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-all duration-200 Hover: translate-x-1 transition-transform block" href="#">Pediatrics</a></li>
+</ul>
+</div>
+<div class="col-span-1">
+<h4 class="font-headline-md text-body-lg font-bold text-on-background mb-md">Quick Links</h4>
+<ul class="space-y-sm">
+<li><a class="font-label-md text-label-md text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-all duration-200 Hover: translate-x-1 transition-transform block" href="#">About Us</a></li>
+<li><a class="font-label-md text-label-md text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-all duration-200 Hover: translate-x-1 transition-transform block" href="#">Patient Portal</a></li>
+<li><a class="font-label-md text-label-md text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-all duration-200 Hover: translate-x-1 transition-transform block" href="#">Diagnostic Center</a></li>
+</ul>
+</div>
+<div class="col-span-1">
+<h4 class="font-headline-md text-body-lg font-bold text-on-background mb-md">Legal &amp; Support</h4>
+<ul class="space-y-sm">
+<li><a class="font-label-md text-label-md text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-all duration-200 Hover: translate-x-1 transition-transform block" href="#">Privacy Policy</a></li>
+<li><a class="font-label-md text-label-md text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-all duration-200 Hover: translate-x-1 transition-transform block" href="#">Contact Support</a></li>
+</ul>
+</div>
+</div>
+<div class="max-w-container-max mx-auto px-gutter mt-lg pt-md border-t border-outline-variant/20 text-center">
+<p class="font-body-md text-body-md text-on-surface-variant">
+                © 2024 MediCare Premium Clinic. Leading the way in clinical excellence.
+            </p>
+</div>
+</footer>
+</body></html>
