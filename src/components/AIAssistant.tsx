@@ -758,7 +758,7 @@ export default function AIAssistant({ isOpen, setIsOpen }: { isOpen: boolean, se
                 <Sparkles className="w-6 h-6 text-indigo-600" />
               </div>
               <div className="overflow-hidden">
-                <h3 className="font-bold text-slate-900 text-[13.5px] sm:text-[15px] leading-none truncate text-left">Montefiore</h3>
+                <h3 className="font-bold text-slate-900 text-[13.5px] sm:text-[15px] leading-none truncate text-left">HealthyME | Life@ Montefiore</h3>
                 <div className="flex items-center gap-1.5 mt-1">
                   <span className="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse"></span>
                   <span className="text-[9px] sm:text-[10px] text-slate-500 font-bold uppercase tracking-wider">
@@ -952,7 +952,7 @@ export default function AIAssistant({ isOpen, setIsOpen }: { isOpen: boolean, se
               </button>
             </div>
             <p className="text-[9px] sm:text-[10px] text-center text-slate-400 mt-3 sm:mt-4 font-bold tracking-tight opacity-70">
-              AI-generated responses may be inaccurate.
+              This is a AI Generated Response
             </p>
           </div>
         </motion.div>
