@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "AI Benefits Dashboard",
-  description: "Generic AI-powered employee benefits and assistant platform.",
+  title: "HealthyME | Life@ Montefiore",
+  description: "AI-powered tuition reimbursement management for Montefiore Health System employees.",
 };
 
 export default function RootLayout({

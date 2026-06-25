@@ -1,17 +1,27 @@
 @import "tailwindcss";
 
 @theme {
-  --color-surface: #f9f9ff;
-  --color-on-surface: #111c2d;
-  --color-primary: #004e99;
+  --color-surface: #ffffff;
+  --color-on-surface: #1a1a1a;
+  --color-primary: #003769;
   --color-on-primary: #ffffff;
-  --color-outline-variant: #c1c6d4;
-  --color-surface-container-low: #f0f3ff;
-  --color-on-surface-variant: #414752;
-  --color-surface-variant: #d8e3fb;
+  --color-outline-variant: #e6e6e6;
+  --color-surface-container-low: #e6f0f5;
+  --color-on-surface-variant: #1a1a1a;
+  --color-surface-variant: #e6f0f5;
+
+  --color-brand-blue: #003769;
+  --color-brand-teal: #009480;
+  --color-brand-lightblue: #e6f0f5;
+  --color-brand-mint: #acd3c0;
+  --color-brand-lightblue2: #94c5e3;
+  --color-brand-grey: #e6e6e6;
+  --color-brand-black: #1a1a1a;
   
-  --shadow-ambient: 0 4px 20px rgba(10, 102, 194, 0.05);
-  --shadow-lift: 0 8px 30px rgba(10, 102, 194, 0.08);
+  --shadow-ambient: 0 4px 20px rgba(0, 55, 105, 0.05);
+  --shadow-lift: 0 8px 30px rgba(0, 55, 105, 0.08);
+
+  --font-display: "Leitura", "Times New Roman", Georgia, serif;
 }
 
 @layer base {
@@ -58,5 +68,13 @@
   &::-webkit-scrollbar {
     display: none;
   }
+}
+
+@utility bg-gradient-mesh {
+  background-color: #ffffff;
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(172, 211, 192, 0.35) 0px, transparent 50%),
+    radial-gradient(at 100% 0%, rgba(230, 240, 245, 0.85) 0px, transparent 50%),
+    radial-gradient(at 50% 100%, rgba(148, 197, 227, 0.25) 0px, transparent 60%);
 }
 

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Sparkles, ArrowUpRight, GraduationCap } from "lucide-react";
+import { Sparkles, ArrowUpRight } from "lucide-react";
 import Dashboard from "@/components/Dashboard";
 import AIAssistant from "@/components/AIAssistant";
 import { motion } from "framer-motion";
@@ -10,41 +10,35 @@ export default function Home() {
   const [isBotOpen, setIsBotOpen] = useState(true);
 
   return (
-    <main className="flex min-h-screen bg-[#fcfdfe] overflow-hidden relative">
+    <main className="flex min-h-screen bg-gradient-mesh overflow-hidden relative">
       {/* Main Content Section */}
-      <div className="flex-1 flex flex-col justify-center items-center p-8 sm:p-16 lg:p-24 bg-white z-10 relative">
+      <div className="flex-1 flex flex-col justify-center items-center p-8 sm:p-16 lg:p-24 bg-transparent z-10 relative">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="max-w-2xl text-center"
+          className="bg-white/95 backdrop-blur-md p-10 sm:p-16 rounded-[2rem] border border-brand-grey/40 shadow-ambient max-w-xl w-full text-center"
         >
-          <div className="inline-flex items-center gap-2 bg-indigo-50 text-[#004e99] px-4 py-2 rounded-full mb-8">
-            <GraduationCap className="w-4 h-4" />
-            <span className="text-[10px] font-bold uppercase tracking-widest">Education Benefits</span>
+          <div className="flex justify-center mb-8">
+            <img 
+              src="/logo_lockup.jpg" 
+              alt="Healthy ME | Life @ Montefiore" 
+              className="h-16 sm:h-20 object-contain"
+            />
           </div>
           
-          <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-slate-900 mb-6 leading-[1.1] tracking-tight">
-            Tuition Reimbursement <br />
-            <span className="text-[#004e99]">Agent Platform</span>
-          </h1>
-          
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex justify-center">
             <a 
               href="https://mtra.vercel.app/" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 bg-[#004e99] text-white px-10 py-5 rounded-2xl font-bold text-[16px] hover:bg-blue-800 transition-all shadow-xl shadow-blue-100 active:scale-95 group"
+              className="inline-flex items-center justify-center gap-2 bg-brand-blue text-white px-10 py-4.5 rounded-xl font-bold text-[16px] hover:bg-[#002547] transition-all shadow-lg hover:shadow-xl active:scale-95 group w-full sm:w-auto"
             >
               Login to Platform
               <ArrowUpRight className="w-5 h-5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
             </a>
           </div>
         </motion.div>
-
-        {/* Subtle decorative elements for background depth */}
-        <div className="absolute top-1/4 -left-20 w-96 h-96 bg-indigo-50 rounded-full blur-[120px] opacity-40 pointer-events-none" />
-        <div className="absolute bottom-1/4 -right-20 w-96 h-96 bg-blue-50 rounded-full blur-[120px] opacity-40 pointer-events-none" />
 
         {/* Subtle decorative element */}
         <div className="absolute bottom-12">

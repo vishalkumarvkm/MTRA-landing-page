@@ -123,7 +123,7 @@ const CalendarView = ({ onSelect }: { onSelect: (date: string) => void }) => {
                         onClick={() => onSelect(`May ${d}, 2026`)}
                         className={cn(
                             "aspect-square rounded-lg text-[9px] sm:text-[10px] font-bold transition-all flex items-center justify-center",
-                            d === 15 ? "bg-[#004e99] text-white shadow-md shadow-blue-100" : "hover:bg-indigo-50 text-slate-600"
+                            d === 15 ? "bg-[#003769] text-white shadow-md shadow-blue-100" : "hover:bg-indigo-50 text-slate-600"
                         )}
                     >
                         {d}
@@ -225,7 +225,7 @@ export default function AIAssistant({ isOpen, setIsOpen }: { isOpen: boolean, se
                     </button>
                     <button 
                         onClick={() => { addUserMessage("Continue to Review"); handleStepUpdate(6); }} 
-                        className="flex-1 px-3 py-1.5 rounded-lg bg-indigo-50 text-[#004e99] text-[9px] font-bold border border-indigo-100 hover:bg-indigo-100 transition-colors shadow-sm"
+                        className="flex-1 px-3 py-1.5 rounded-lg bg-indigo-50 text-[#003769] text-[9px] font-bold border border-indigo-100 hover:bg-indigo-100 transition-colors shadow-sm"
                     >
                         Continue to Review
                     </button>
@@ -260,7 +260,7 @@ export default function AIAssistant({ isOpen, setIsOpen }: { isOpen: boolean, se
                       handleStepUpdate(nextStep + 1);
                   }
                 }} 
-                className="flex-1 min-w-[120px] px-3 py-1.5 rounded-lg bg-indigo-50 text-[#004e99] text-[9px] font-bold hover:bg-indigo-100 transition-colors border border-indigo-100 shadow-sm"
+                className="flex-1 min-w-[120px] px-3 py-1.5 rounded-lg bg-indigo-50 text-[#003769] text-[9px] font-bold hover:bg-indigo-100 transition-colors border border-indigo-100 shadow-sm"
               >
                 {opt.label}
               </button>
@@ -420,7 +420,11 @@ export default function AIAssistant({ isOpen, setIsOpen }: { isOpen: boolean, se
                         </div>
                     </div>
                     <ActionButtons options={[
-                        { label: "View My Claims" }, 
+                        { label: "View My Claims", action: () => {
+                            addUserMessage("View My Claims");
+                            setCurrentStep(null);
+                            handleSend("Check status");
+                        }}, 
                         { label: "New Application", action: () => { addUserMessage("Start New Application"); setCurrentStep(0); handleStartApplication(); } }
                     ]} />
                   </div>
@@ -446,9 +450,9 @@ export default function AIAssistant({ isOpen, setIsOpen }: { isOpen: boolean, se
             <button 
               key={p.id} 
               onClick={() => { addUserMessage(p.name); handleStepUpdate(1, p.id); }} 
-              className="flex flex-col items-start p-3 rounded-xl border border-slate-100 bg-white hover:border-[#004e99] hover:bg-slate-50 transition-all text-left group shadow-sm active:scale-[0.98] w-full"
+              className="flex flex-col items-start p-3 rounded-xl border border-slate-100 bg-white hover:border-[#003769] hover:bg-slate-50 transition-all text-left group shadow-sm active:scale-[0.98] w-full"
             >
-              <span className="text-[10px] sm:text-[11px] font-bold text-[#004e99] group-hover:translate-x-1 transition-transform flex items-center gap-2 uppercase tracking-wide">
+              <span className="text-[10px] sm:text-[11px] font-bold text-[#003769] group-hover:translate-x-1 transition-transform flex items-center gap-2 uppercase tracking-wide">
                   {p.name} <ArrowRight className="w-3 h-3" />
               </span>
               <span className="text-[9px] sm:text-[10px] text-slate-500 font-medium">{p.cap} • {p.eligible}</span>
@@ -485,7 +489,7 @@ export default function AIAssistant({ isOpen, setIsOpen }: { isOpen: boolean, se
                         {RECENT_CLAIMS.map(claim => (
                             <div key={claim.id} className="p-3 rounded-xl border border-slate-100 bg-white shadow-sm flex items-center justify-between group hover:border-indigo-200 transition-all w-full">
                                 <div className="space-y-0.5 text-left">
-                                    <p className="text-[10px] sm:text-[11px] font-bold text-[#004e99]">{claim.id}</p>
+                                    <p className="text-[10px] sm:text-[11px] font-bold text-[#003769]">{claim.id}</p>
                                     <p className="text-[9px] text-slate-400 font-bold uppercase tracking-tight">{claim.date} • {claim.amount}</p>
                                 </div>
                                 <span className={cn("text-[8px] sm:text-[9px] font-bold px-2 py-1 rounded-full uppercase tracking-tighter whitespace-nowrap", claim.color)}>
@@ -565,11 +569,11 @@ export default function AIAssistant({ isOpen, setIsOpen }: { isOpen: boolean, se
                                                                 addAssistantMessage(
                                                                     <div className="space-y-4 w-full text-left">
                                                                         <div className="p-3 sm:p-4 bg-indigo-50 rounded-xl border border-indigo-100 flex items-center gap-3 w-full">
-                                                                            <div className="w-10 h-10 bg-[#004e99] rounded-lg shadow-sm flex items-center justify-center text-white shrink-0">
+                                                                            <div className="w-10 h-10 bg-[#003769] rounded-lg shadow-sm flex items-center justify-center text-white shrink-0">
                                                                                 <Calendar className="w-5 h-5" />
                                                                             </div>
                                                                             <div className="text-left overflow-hidden">
-                                                                                <span className="block text-[9px] font-bold text-[#004e99] uppercase tracking-tighter">Schedule Set</span>
+                                                                                <span className="block text-[9px] font-bold text-[#003769] uppercase tracking-tighter">Schedule Set</span>
                                                                                 <span className="text-[13px] font-bold text-slate-900 italic truncate">{date}</span>
                                                                             </div>
                                                                         </div>
@@ -590,13 +594,13 @@ export default function AIAssistant({ isOpen, setIsOpen }: { isOpen: boolean, se
                                                                                         </div>
                                                                                         <p className="text-[12px] text-slate-600 leading-relaxed">Your request for **{type}** has been successfully drafted and saved to your profile. Would you like to submit it for approval now?</p>
                                                                                         <div className="flex flex-col sm:flex-row gap-2 w-full">
-                                                                                            <button onClick={() => handleSend("Submit for Approval")} className="flex-1 py-3 bg-[#004e99] text-white rounded-xl text-[10px] font-bold uppercase tracking-widest shadow-lg active:scale-95 transition-all">Submit Now</button>
+                                                                                            <button onClick={() => handleSend("Submit for Approval")} className="flex-1 py-3 bg-[#003769] text-white rounded-xl text-[10px] font-bold uppercase tracking-widest shadow-lg active:scale-95 transition-all">Submit Now</button>
                                                                                             <button onClick={() => addUserMessage("Save for later")} className="flex-1 py-3 bg-white text-slate-600 border border-slate-200 rounded-xl text-[10px] font-bold uppercase tracking-widest active:scale-95 transition-all">Save for later</button>
                                                                                         </div>
                                                                                     </div>
                                                                                 ); 
                                                                             }}
-                                                                            className="w-full py-3 bg-[#004e99] text-white rounded-xl text-[10px] font-bold uppercase tracking-widest shadow-xl shadow-blue-900/10 hover:scale-[1.01] active:scale-[0.98] transition-all"
+                                                                            className="w-full py-3 bg-[#003769] text-white rounded-xl text-[10px] font-bold uppercase tracking-widest shadow-xl shadow-blue-900/10 hover:scale-[1.01] active:scale-[0.98] transition-all"
                                                                         >
                                                                             Proceed to Confirmation
                                                                         </button>
@@ -620,7 +624,7 @@ export default function AIAssistant({ isOpen, setIsOpen }: { isOpen: boolean, se
                                                 <ChevronRight className="w-4 h-4 text-slate-400 group-hover:text-indigo-500 transition-colors shrink-0" />
                                             </div>
                                             <button 
-                                                className="w-full py-3 bg-[#004e99] text-white rounded-xl text-[10px] font-bold uppercase tracking-widest shadow-xl shadow-blue-900/10 opacity-50 cursor-not-allowed"
+                                                className="w-full py-3 bg-[#003769] text-white rounded-xl text-[10px] font-bold uppercase tracking-widest shadow-xl shadow-blue-900/10 opacity-50 cursor-not-allowed"
                                             >
                                                 Proceed to Confirmation
                                             </button>
@@ -653,7 +657,7 @@ export default function AIAssistant({ isOpen, setIsOpen }: { isOpen: boolean, se
                     </div>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 w-full">
                         <button onClick={() => handleSend("Check status")} className="w-full py-3 bg-white border border-slate-200 text-slate-600 rounded-xl text-[10px] font-bold uppercase tracking-widest hover:bg-slate-50 transition-all">Track Status</button>
-                        <button onClick={() => setIsOpen(false)} className="w-full py-3 bg-[#004e99] text-white rounded-xl text-[10px] font-bold uppercase tracking-widest shadow-lg shadow-blue-100 hover:bg-blue-800 transition-all">Done</button>
+                        <button onClick={() => setIsOpen(false)} className="w-full py-3 bg-[#003769] text-white rounded-xl text-[10px] font-bold uppercase tracking-widest shadow-lg shadow-blue-100 hover:bg-blue-800 transition-all">Done</button>
                     </div>
                 </div>,
                 500,
@@ -667,7 +671,7 @@ export default function AIAssistant({ isOpen, setIsOpen }: { isOpen: boolean, se
         setTimeout(() => {
             addAssistantMessage(
                 <div className="space-y-4 w-full">
-                    <div className="p-4 rounded-xl bg-[#004e99] text-white shadow-lg w-full text-left">
+                    <div className="p-4 rounded-xl bg-[#003769] text-white shadow-lg w-full text-left">
                         <div className="flex items-center gap-2 mb-3">
                             <AlertCircle className="w-4 h-4 text-blue-200" />
                             <h4 className="text-[11px] font-bold uppercase tracking-widest">Policy Overview</h4>
@@ -804,38 +808,37 @@ export default function AIAssistant({ isOpen, setIsOpen }: { isOpen: boolean, se
             </div>
           </header>
 
-          {/* Stepper */}
-          {currentStep !== null && (
-            <div className="px-3 sm:px-4 py-4 sm:py-6 bg-slate-50/50 border-b border-slate-100 overflow-x-auto no-scrollbar scroll-smooth">
-              <div className="flex items-center justify-between min-w-[650px] sm:min-w-[750px] px-2 relative">
-                {STEPS.map((step, idx) => (
-                  <React.Fragment key={step}>
-                    <div className="flex flex-col items-center gap-1.5 sm:gap-2 group relative z-10">
-                      <div className={cn(
-                        "w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center text-[10px] sm:text-[11px] font-bold transition-all duration-300 border-2",
-                        idx === currentStep ? "bg-[#004e99] text-white border-[#004e99] shadow-lg shadow-blue-200" : 
-                        idx < currentStep ? "bg-[#004e99] text-white border-[#004e99]" : "bg-white border-slate-200 text-slate-400"
-                      )}>
-                        {idx < currentStep ? <Check className="w-4 h-4 sm:w-5 sm:h-5" /> : idx + 1}
-                      </div>
-                      <span className={cn(
-                        "text-[8px] sm:text-[9px] font-bold uppercase tracking-tight whitespace-nowrap",
-                        idx === currentStep ? "text-[#004e99]" : "text-slate-400"
-                      )}>
-                        {step}
-                      </span>
-                    </div>
-                    {idx < STEPS.length - 1 && (
-                      <div className={cn(
-                        "h-[1px] sm:h-[1.5px] flex-1 mx-[-10px] sm:mx-[-15px] transition-colors duration-500 relative z-0",
-                        idx < currentStep ? "bg-[#004e99]" : "bg-slate-200"
-                      )} />
-                    )}
-                  </React.Fragment>
-                ))}
-              </div>
+      {/* Stepper */}
+      {currentStep !== null && (
+        <div className="px-4 sm:px-6 py-4 bg-slate-50/50 border-b border-slate-100 select-none shrink-0">
+          <div className="relative flex items-center justify-between w-full px-2">
+            {/* Connecting Line Background & Progress */}
+            <div className="absolute left-5 right-5 top-1/2 -translate-y-1/2 h-[2px] bg-slate-200 z-0">
+              <div 
+                className="h-full bg-[#003769] transition-all duration-500" 
+                style={{ width: `${(currentStep / (STEPS.length - 1)) * 100}%` }}
+              />
             </div>
-          )}
+            
+            {STEPS.map((step, idx) => (
+              <div key={step} className="flex flex-col items-center group relative z-10">
+                <div className={cn(
+                  "w-6 h-6 sm:w-7 sm:h-7 rounded-full flex items-center justify-center text-[9px] sm:text-[10px] font-bold transition-all duration-300 border-2 bg-white",
+                  idx === currentStep ? "bg-[#003769] text-white border-[#003769] shadow-lg shadow-blue-200/50 scale-110" : 
+                  idx < currentStep ? "bg-[#003769] text-white border-[#003769]" : "border-slate-200 text-slate-400"
+                )}>
+                  {idx < currentStep ? <Check className="w-3.5 h-3.5" /> : idx + 1}
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="text-center mt-3">
+            <span className="text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-[#003769]">
+              Step {currentStep + 1}: {STEPS[currentStep] || ""}
+            </span>
+          </div>
+        </div>
+      )}
 
           {/* Chat Content */}
           <div
@@ -864,7 +867,7 @@ export default function AIAssistant({ isOpen, setIsOpen }: { isOpen: boolean, se
                   <div className={cn(
                     "px-4 sm:px-5 py-3 text-[12.5px] sm:text-[13px] leading-relaxed shadow-sm transition-all text-left",
                     msg.role === "user" 
-                      ? "bg-[#004e99] text-white rounded-[1.2rem] rounded-tr-none max-w-[85%]" 
+                      ? "bg-[#003769] text-white rounded-[1.2rem] rounded-tr-none max-w-[85%]" 
                       : "bg-[#f8f9fa] text-slate-700 rounded-[1.2rem] rounded-tl-none border border-slate-100 max-w-[92%] w-full"
                   )}>
                     {typeof msg.content === "string" ? (
@@ -885,7 +888,7 @@ export default function AIAssistant({ isOpen, setIsOpen }: { isOpen: boolean, se
                             <button 
                                 key={i}
                                 onClick={act.action}
-                                className="flex-1 min-w-[120px] flex items-center justify-center gap-2 py-2.5 px-3 rounded-xl bg-indigo-50 text-[#004e99] text-[10px] font-bold hover:bg-indigo-100 transition-all border border-indigo-100 shadow-sm active:scale-95 uppercase tracking-wide"
+                                className="flex-1 min-w-[120px] flex items-center justify-center gap-2 py-2.5 px-3 rounded-xl bg-indigo-50 text-[#003769] text-[10px] font-bold hover:bg-indigo-100 transition-all border border-indigo-100 shadow-sm active:scale-95 uppercase tracking-wide"
                             >
                                 <act.icon className="w-3.5 h-3.5 shrink-0" /> {act.label}
                             </button>
@@ -919,8 +922,8 @@ export default function AIAssistant({ isOpen, setIsOpen }: { isOpen: boolean, se
                       onClick={() => handleSend(prompt.label)}
                       className="w-full flex items-center gap-3 p-3.5 sm:p-4 bg-indigo-50 border border-indigo-100 rounded-xl hover:bg-indigo-100 transition-all text-left shadow-sm group active:scale-[0.98]"
                     >
-                      <prompt.icon className="w-4 h-4 text-[#004e99] group-hover:scale-110 transition-transform shrink-0" />
-                      <span className="text-[10px] sm:text-[11px] font-bold text-[#004e99] uppercase tracking-wide truncate">{prompt.label}</span>
+                      <prompt.icon className="w-4 h-4 text-[#003769] group-hover:scale-110 transition-transform shrink-0" />
+                      <span className="text-[10px] sm:text-[11px] font-bold text-[#003769] uppercase tracking-wide truncate">{prompt.label}</span>
                     </button>
                   ))}
                 </div>
@@ -937,14 +940,14 @@ export default function AIAssistant({ isOpen, setIsOpen }: { isOpen: boolean, se
                   value={inputValue}
                   onChange={(e) => setInputValue(e.target.value)}
                   onKeyDown={(e) => e.key === "Enter" && handleSend(inputValue)}
-                  placeholder={currentStep !== null ? `Step ${currentStep + 1}: ${STEPS[currentStep]}...` : "Ask a question..."}
+                  placeholder={currentStep !== null && STEPS[currentStep] ? `Step ${currentStep + 1}: ${STEPS[currentStep]}...` : "Ask a question..."}
                   className="w-full bg-white border-2 border-indigo-50 rounded-[1rem] sm:rounded-[1.2rem] px-4 sm:px-5 py-3 sm:py-3.5 text-[12.5px] sm:text-[13px] focus:outline-none focus:border-indigo-200 transition-all pr-10 sm:pr-12 placeholder:text-slate-400 shadow-sm group-hover:border-indigo-100"
                 />
                 <button onClick={() => handleSend(inputValue)} className="absolute right-3 p-1.5 text-indigo-500 hover:text-indigo-700 transition-colors shrink-0">
                   <Send className="w-4.5 h-4.5 sm:w-5 sm:h-5" />
                 </button>
               </div>
-              <button className="w-[48px] h-[48px] sm:w-[52px] sm:h-[52px] bg-[#004e99] text-white rounded-full flex items-center justify-center shadow-lg shadow-blue-900/10 hover:scale-105 active:scale-95 transition-all shrink-0">
+              <button className="w-[48px] h-[48px] sm:w-[52px] sm:h-[52px] bg-[#003769] text-white rounded-full flex items-center justify-center shadow-lg shadow-blue-900/10 hover:scale-105 active:scale-95 transition-all shrink-0">
                 <Mic className="w-4.5 h-4.5 sm:w-5 sm:h-5" />
               </button>
             </div>
