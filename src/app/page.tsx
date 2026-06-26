@@ -10,7 +10,7 @@ export default function Home() {
   const [isBotOpen, setIsBotOpen] = useState(true);
 
   return (
-    <main className="flex min-h-screen bg-gradient-mesh overflow-hidden relative">
+    <main className="flex flex-col min-h-screen bg-gradient-mesh overflow-hidden relative">
       {/* Main Content Section */}
       <div className="flex-1 flex flex-col justify-center items-center p-8 sm:p-16 lg:p-24 bg-transparent z-10 relative">
         <motion.div
@@ -50,6 +50,28 @@ export default function Home() {
       </div>
 
       <AIAssistant isOpen={isBotOpen} setIsOpen={setIsBotOpen} />
+      
+      <FooterDisclaimer />
     </main>
+  );
+}
+
+function FooterDisclaimer() {
+  return (
+    <footer className="w-full shrink-0 z-50">
+      <div
+        className="w-full text-center text-[11px] font-semibold flex items-center justify-center gap-1.5"
+        style={{
+          backgroundColor: "#F59E0B",
+          color: "#003769",
+          padding: "6px 12px",
+          fontFamily: '"Fakt", Arial, sans-serif',
+          fontWeight: 600,
+        }}
+      >
+        <span className="text-xs">⚠️</span>
+        <span>DEMO BUILD — Sandbox environment. Data is for testing only.</span>
+      </div>
+    </footer>
   );
 }
